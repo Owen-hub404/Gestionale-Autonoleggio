@@ -184,6 +184,10 @@ public class Main {
                     System.out.println();
 
                     break;
+
+                case 0:
+                    System.out.println("Arrivederci");
+                    System.exit(0);
         }
     }
 }
