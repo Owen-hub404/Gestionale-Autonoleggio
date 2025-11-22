@@ -132,11 +132,11 @@ public class Main {
 
 
                     if (veicolis.isEmpty()) {
-                        System.out.println("\n" + "Nessun veicolo registrato. Registra prima un veicolo." + "\n");
+                        System.out.println("\nNessun veicolo registrato. Registra prima un veicolo.\n");
                         break;
                     }
                     if (clientis.isEmpty()) {
-                        System.out.println("\n" + "Nessun cliente registrato. Registra prima un cliente." + "\n");
+                        System.out.println("\nNessun cliente registrato. Registra prima un cliente.\n");
                         break;
                     }
 
@@ -147,13 +147,19 @@ public class Main {
 
 
                     System.out.println("Scegliere un veicolo: ");
-                    int sceltaVeicolo = scanner.nextInt();
-
-
                     for (int i = 0; i < veicolis.size(); i++) {
                         System.out.println(i + " - " + veicolis.get(i));
                         System.out.println(divisore);
                     }
+
+                    int sceltaVeicolo = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (sceltaVeicolo < 0 || sceltaVeicolo >= veicolis.size()) {
+                        System.out.println("Scelta veicolo non valida.");
+                        break;
+                    }
+
 
 
                     System.out.println("Scegliere un cliente: ");
@@ -181,7 +187,7 @@ public class Main {
                         System.out.println();
                     } else
                         for (int i = 0; i < veicolis.size(); i++) {
-                            System.out.println("\n" + "Veicolo " + (i+1) + "\n" + veicolis.get(i) + "\n");
+                            System.out.println("\nVeicolo " + (i+1) + "\n" + veicolis.get(i) + "\n");
                         }
 
                     break;
@@ -195,7 +201,7 @@ public class Main {
                         System.out.println();
                     }else
                         for (int i = 0; i < clientis.size(); i++) {
-                            System.out.println("\n" + "Cliente " + (i+1) + "\n" + clientis.get(i) + "\n");
+                            System.out.println("\nCliente " + (i+1) + "\n" + clientis.get(i) + "\n");
                         }
                     break;
 
