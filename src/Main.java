@@ -100,6 +100,28 @@ public class Main {
 
                     System.out.println("Veicolo registrato correttamente");
                     break;
+
+
+
+                case 3:
+                    System.out.println("*************** Registrazione Cliente ***************");
+
+                    Clienti c = new Clienti();
+
+                    System.out.println("Inserire Nome: ");
+                    c.setNome(scanner.nextLine());
+
+                    System.out.println("Inserire Cognome");
+                    c.setCognome(scanner.nextLine());
+
+                    System.out.println("Inserire Numero Patente");
+                    c.setNumeroPatenteDiGuida(scanner.nextLine());
+
+                    clientis.add(c);
+
+                    System.out.println();
+                    System.out.println("Cliente registrato correttamente");
+                    break;
             }
     }
 }
