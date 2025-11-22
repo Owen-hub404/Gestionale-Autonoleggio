@@ -27,5 +27,38 @@ public class Main {
             int scelta = scanner.nextInt();
             scanner.nextLine();
             System.out.println(divisore);
+
+            switch (scelta) {
+                case 1:
+                    System.out.println("*************** Registrazione Autovettura ***************");
+
+                    Autovetture a = new Autovetture();
+
+                    System.out.println("Inserire Marca: ");
+                    a.setMarca(scanner.nextLine());
+
+                    System.out.println("Inserire Modello: ");
+                    a.setModello(scanner.nextLine());
+
+                    System.out.println("Inserire Numero di Targa: ");
+                    a.setNumeroDiTarga(scanner.nextLine());
+
+                    System.out.println("Inserire tariffa giornaliera: ");
+                    a.setTariffaGiornaliera(scanner.nextDouble());
+                    scanner.nextLine();
+
+                    System.out.println("Inserire Numero di porte: ");
+                    a.setNumeroDiPorte((byte) scanner.nextInt());
+                    scanner.nextLine();
+
+                    System.out.println("Inserire numero di posti: ");
+                    a.setNumeroDiPosti((byte) scanner.nextInt());
+                    scanner.nextLine();
+
+                    veicolis.add(a);
+
+                    System.out.println("Veicolo registrato correttamente");
+                    break;
+            }
     }
 }
