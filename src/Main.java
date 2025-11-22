@@ -62,6 +62,7 @@ public class Main {
                     break;
 
 
+
                 case 2:
                     System.out.println("*************** Registrazione Furgone ***************");
 
@@ -93,6 +94,9 @@ public class Main {
                         b.setDimensioni(lunghezza, larghezza, altezza);
                     }else
                         System.out.println("Errore: devi inserire 3 valori separati da virgola");
+
+
+
 
                     veicolis.add(b);
 
@@ -143,7 +147,7 @@ public class Main {
                     noleggis.
 
 
-                    System.out.println("Scegliere un veicolo: ");
+                            System.out.println("Scegliere un veicolo: ");
                     int sceltaVeicolo = scanner.nextInt();
 
 
@@ -165,6 +169,20 @@ public class Main {
 
                     System.out.println("Noleggio registrato correttamente");
                     System.out.println(divisore);
+                    break;
+
+
+
+                case 5:
+                    System.out.println("*************** Lista Veicoli ***************");
+
+                    if (veicolis.size() == 0) {
+                        System.out.println("\n" + "NON CI SONO VEICOLI REGISTRATI" + "\n");
+                    } else
+                        for (int i = 0; i < veicolis.size(); i++) {
+                            System.out.println("\n" + "Veicolo " + (i+1) + "\n" + veicolis.get(i) + "\n");
+                        }
+
                     break;
             }
     }
