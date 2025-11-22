@@ -176,6 +176,14 @@ public class Main {
                         System.out.println("\n" + "Cliente " + (i + 1) + "\n" + clientis.get(i) + "\n");
                     }
                 break;
+
+                case 7:
+                    System.out.println("*************** Lista Noleggi ***************");
+
+
+                    System.out.println();
+
+                    break;
         }
     }
 }
