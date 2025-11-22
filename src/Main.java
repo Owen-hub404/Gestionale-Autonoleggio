@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -93,9 +94,6 @@ public class Main {
                     }else
                         System.out.println("Errore: devi inserire 3 valori separati da virgola");
 
-
-
-
                     veicolis.add(b);
 
                     System.out.println("Veicolo registrato correttamente");
@@ -121,6 +119,52 @@ public class Main {
 
                     System.out.println();
                     System.out.println("Cliente registrato correttamente");
+                    break;
+
+
+
+                case 4:
+                    System.out.println("*************** Registrazione Noleggio ***************");
+
+
+                    if (veicolis.isEmpty()) {
+                        System.out.println("\n" + "Nessun veicolo registrato. Registra prima un veicolo." + "\n");
+                        break;
+                    }
+                    if (clientis.isEmpty()) {
+                        System.out.println("\n" + "Nessun cliente registrato. Registra prima un cliente." + "\n");
+                        break;
+                    }
+
+
+                    System.out.println("Digitare data di fine noleggio:  (aaaa-mm-gg)");
+                    String fineNoleggio = scanner.nextLine();
+                    LocalDate data = LocalDate.parse(fineNoleggio);
+                    noleggis.
+
+
+                    System.out.println("Scegliere un veicolo: ");
+                    int sceltaVeicolo = scanner.nextInt();
+
+
+                    for (int i = 0; i < veicolis.size(); i++) {
+                        System.out.println(i + " - " + veicolis.get(i));
+                        System.out.println(divisore);
+                    }
+
+
+                    System.out.println("Scegliere un cliente: ");
+                    int sceltaCliente = scanner.nextInt();
+
+
+                    for (int i = 0; i < clientis.size(); i++) {
+                        System.out.println((i+1) + " - " + clientis.get(i));
+                        System.out.println(divisore);
+                    }
+
+
+                    System.out.println("Noleggio registrato correttamente");
+                    System.out.println(divisore);
                     break;
             }
     }
