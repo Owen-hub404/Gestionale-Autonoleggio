@@ -59,6 +59,47 @@ public class Main {
 
                     System.out.println("Veicolo registrato correttamente");
                     break;
+
+
+                case 2:
+                    System.out.println("*************** Registrazione Furgone ***************");
+
+                    Furgoni b = new Furgoni();
+
+                    System.out.println("Inserire Marca: ");
+                    b.setMarca(scanner.nextLine());
+
+                    System.out.println("Inserire Modello: ");
+                    b.setModello(scanner.nextLine());
+
+                    System.out.println("Inserire Numero di Targa: ");
+                    b.setNumeroDiTarga(scanner.nextLine());
+
+                    System.out.println("Inserire tariffa giornaliera: ");
+                    b.setTariffaGiornaliera(scanner.nextDouble());
+                    scanner.nextLine();
+
+                    System.out.println("Inserire dimensioni separate da virgola: (Lunghezza, larghezza e altezza in cm)");
+                    String line = scanner.nextLine();
+                    String[] parts = line.split(",");
+
+                    if (parts.length == 3) {
+                        String lunghezza = scanner.nextLine();
+                        String larghezza = scanner.nextLine();
+                        String altezza = scanner.nextLine();
+                        b.setDimensioni(lunghezza, larghezza, altezza);
+
+                        b.setDimensioni(lunghezza, larghezza, altezza);
+                    }else
+                        System.out.println("Errore: devi inserire 3 valori separati da virgola");
+
+
+
+
+                    veicolis.add(b);
+
+                    System.out.println("Veicolo registrato correttamente");
+                    break;
             }
     }
 }
