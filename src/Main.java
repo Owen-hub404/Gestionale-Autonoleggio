@@ -87,10 +87,9 @@ public class Main {
                     String[] parts = line.split(",");
 
                     if (parts.length == 3) {
-                        String lunghezza = scanner.nextLine();
-                        String larghezza = scanner.nextLine();
-                        String altezza = scanner.nextLine();
-                        b.setDimensioni(lunghezza, larghezza, altezza);
+                        String lunghezza = parts[0].trim();
+                        String larghezza = parts[1].trim();
+                        String altezza = parts[2].trim();
 
                         b.setDimensioni(lunghezza, larghezza, altezza);
                     }else
@@ -145,10 +144,9 @@ public class Main {
                     System.out.println("Digitare data di fine noleggio:  (aaaa-mm-gg)");
                     String fineNoleggio = scanner.nextLine();
                     LocalDate data = LocalDate.parse(fineNoleggio);
-                    noleggis.
 
 
-                            System.out.println("Scegliere un veicolo: ");
+                    System.out.println("Scegliere un veicolo: ");
                     int sceltaVeicolo = scanner.nextInt();
 
 
