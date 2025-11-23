@@ -294,4 +294,15 @@ public class Main {
         System.out.println(DIVISORE);
     }
 
+    private static int leggiIntero(String messaggio) {
+        while (true) {
+            try {
+                System.out.print(messaggio);
+                int numero = Integer.parseInt(scanner.nextLine());
+                return numero;
+            } catch (NumberFormatException e) {
+                System.out.println("Inserisci un numero valido.");
+            }
+        }
+    }
 }
