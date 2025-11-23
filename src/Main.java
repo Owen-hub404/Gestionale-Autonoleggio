@@ -339,6 +339,32 @@ public class Main {
         System.out.println("Autovettura registrata correttamente.");
     }
 
+    private static void registraFurgone() {
+        System.out.println("*************** Registrazione Furgone ***************");
+
+        Furgoni f = new Furgoni();
+
+        System.out.print("Marca: ");
+        f.setMarca(scanner.nextLine());
+
+        System.out.print("Modello: ");
+        f.setModello(scanner.nextLine());
+
+        System.out.print("Numero di Targa: ");
+        f.setNumeroDiTarga(scanner.nextLine());
+
+        f.setTariffaGiornaliera(leggiDouble("Tariffa giornaliera: "));
+        f.setPortataInKg(leggiIntero("Portata in Kg: "));
+
+        System.out.print("Dimensioni (Lunghezza,Larghezza,Altezza in cm): ");
+        String[] dim = scanner.nextLine().split(",");
+        if (dim.length == 3) f.setDimensioni(dim[0].trim(), dim[1].trim(), dim[2].trim());
+        else System.out.println("Errore: inserisci 3 valori separati da virgola.");
+
+        veicolis.add(f);
+        System.out.println("Furgone registrato correttamente.");
+    }
+
     private static void registraCliente() {
         System.out.println("*************** Registrazione Cliente ***************");
 
