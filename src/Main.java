@@ -403,4 +403,23 @@ public class Main {
         if (clientis.isEmpty()) System.out.println("Nessun cliente registrato.");
         else clientis.forEach(System.out::println);
     }
+
+    private static void listaNoleggi() {
+        System.out.println("*************** Lista Noleggi ***************");
+        if (noleggis.isEmpty()) System.out.println("Nessun noleggio registrato.");
+        else {
+            for (int i = 0; i < noleggis.size(); i++) {
+                Noleggi n = noleggis.get(i);
+                Veicoli v = n.getVeicolo();
+                Clienti c = n.getCliente();
+                String tipo = (v instanceof Autovetture) ? "Autovettura" : "Furgone";
+                System.out.println("\nNoleggio " + (i + 1) +
+                        "\nTipo veicolo: " + tipo +
+                        "\n" + v +
+                        "\nCliente: " + c.getNome() + " " + c.getCognome() + ", Patente: " + c.getNumeroPatenteDiGuida() +
+                        "\nData inizio: " + n.getDataInizio() + ", Data fine: " + n.getDataFine() +
+                        "\nImporto totale: " + n.getImportoTotale() + "€\n");
+            }
+        }
+    }
 }
