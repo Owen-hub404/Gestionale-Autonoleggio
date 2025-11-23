@@ -356,4 +356,39 @@ public class Main {
         clientis.add(c);
         System.out.println("Cliente registrato correttamente.");
     }
+
+    private static void registraNoleggio() {
+        System.out.println("*************** Registrazione Noleggio ***************");
+
+        if (veicolis.isEmpty()) { System.out.println("Nessun veicolo registrato."); return; }
+        if (clientis.isEmpty()) { System.out.println("Nessun cliente registrato."); return; }
+
+        System.out.print("Data fine noleggio (aaaa-mm-gg): ");
+        LocalDate dataFine = LocalDate.parse(scanner.nextLine());
+
+        System.out.println("Scegli veicolo:");
+        for (int i = 0; i < veicolis.size(); i++) {
+            System.out.println((i + 1) + " - " + veicolis.get(i));
+        }
+        int sceltaVeicolo = leggiIntero("Seleziona numero veicolo: ");
+        if (sceltaVeicolo < 1 || sceltaVeicolo > veicolis.size()) {
+            System.out.println("Scelta veicolo non valida."); return;
+        }
+        Veicoli veicoloScelto = veicolis.get(sceltaVeicolo - 1);
+
+        System.out.println("Scegli cliente:");
+        for (int i = 0; i < clientis.size(); i++) {
+            System.out.println((i + 1) + " - " + clientis.get(i));
+        }
+        int sceltaCliente = leggiIntero("Seleziona numero cliente: ");
+        if (sceltaCliente < 1 || sceltaCliente > clientis.size()) {
+            System.out.println("Scelta cliente non valida."); return;
+        }
+        Clienti clienteScelto = clientis.get(sceltaCliente - 1);
+
+        Noleggi n = new Noleggi(veicoloScelto, clienteScelto, dataFine);
+        noleggis.add(n);
+
+        System.out.println("Noleggio registrato correttamente!");
+    }
 }
