@@ -386,13 +386,13 @@ public class Main {
     private static void registraNoleggio() {
         System.out.println("*************** Registrazione Noleggio ***************");
 
-        if (veicolis.isEmpty()) { System.out.println("Nessun veicolo registrato."); return; }
-        if (clientis.isEmpty()) { System.out.println("Nessun cliente registrato."); return; }
+        if (veicolis.isEmpty()) { System.out.println("\nNessun veicolo registrato.\n"); return; }
+        if (clientis.isEmpty()) { System.out.println("\nNessun cliente registrato.\n"); return; }
 
         System.out.print("Data fine noleggio (aaaa-mm-gg): ");
         LocalDate dataFine = LocalDate.parse(scanner.nextLine());
 
-        System.out.println("Scegli veicolo:");
+        System.out.println("Scegli veicolo: ");
         for (int i = 0; i < veicolis.size(); i++) {
             System.out.println((i + 1) + " - " + veicolis.get(i));
         }
@@ -420,19 +420,19 @@ public class Main {
 
     private static void listaVeicoli() {
         System.out.println("*************** Lista Veicoli ***************");
-        if (veicolis.isEmpty()) System.out.println("Nessun veicolo registrato.");
+        if (veicolis.isEmpty()) System.out.println("\nNessun veicolo registrato.\n");
         else veicolis.forEach(System.out::println);
     }
 
     private static void listaClienti() {
         System.out.println("*************** Lista Clienti ***************");
-        if (clientis.isEmpty()) System.out.println("Nessun cliente registrato.");
+        if (clientis.isEmpty()) System.out.println("\nNessun cliente registrato.\n");
         else clientis.forEach(System.out::println);
     }
 
     private static void listaNoleggi() {
         System.out.println("*************** Lista Noleggi ***************");
-        if (noleggis.isEmpty()) System.out.println("Nessun noleggio registrato.");
+        if (noleggis.isEmpty()) System.out.println("\nNessun noleggio registrato.\n");
         else {
             for (int i = 0; i < noleggis.size(); i++) {
                 Noleggi n = noleggis.get(i);
