@@ -338,4 +338,22 @@ public class Main {
         veicolis.add(a);
         System.out.println("Autovettura registrata correttamente.");
     }
+
+    private static void registraCliente() {
+        System.out.println("*************** Registrazione Cliente ***************");
+
+        Clienti c = new Clienti();
+
+        System.out.print("Nome: ");
+        c.setNome(scanner.nextLine());
+
+        System.out.print("Cognome: ");
+        c.setCognome(scanner.nextLine());
+
+        System.out.print("Numero Patente: ");
+        c.setNumeroPatenteDiGuida(scanner.nextLine());
+
+        clientis.add(c);
+        System.out.println("Cliente registrato correttamente.");
+    }
 }
