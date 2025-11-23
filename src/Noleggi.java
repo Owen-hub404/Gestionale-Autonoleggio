@@ -1,36 +1,34 @@
 import java.time.LocalDate;
 
 public class Noleggi{
-    private LocalDate dataDiInizio;
-    private LocalDate dataDiFine;
+    private LocalDate dataInizio;
+    private LocalDate dataFine;
     private Veicoli veicolo;
     private Clienti cliente;
     private int importoTotale;
 
 
     public Noleggi(){
-        this.dataDiInizio = LocalDate.now();
-        this.dataDiFine = null;
+        this.dataInizio = LocalDate.now();
+        this.dataFine = null;
         this.veicolo = null;
         this.cliente = null;
         this.importoTotale = 0;
     }
 
-    public Noleggi(LocalDate dataDiInizio, LocalDate dataDiFine,
-                   Veicoli veicolo, Clienti cliente, int importoTotale) {
-        this.dataDiInizio = LocalDate.now();
-        this.dataDiFine = dataDiFine;
+    public Noleggi(Veicoli veicolo, Clienti cliente, LocalDate dataFine) {
         this.veicolo = veicolo;
         this.cliente = cliente;
-        this.importoTotale = importoTotale;
+        this.dataFine = dataFine;
     }
 
-    public LocalDate getDataDiInizio() {
-        return dataDiInizio;
+
+    public LocalDate getDataInizio() {
+        return dataInizio;
     }
 
-    public LocalDate getDataDiFine() {
-        return dataDiFine;
+    public LocalDate getDataFine() {
+        return dataFine;
     }
 
     public Veicoli getVeicolo() {
@@ -45,8 +43,8 @@ public class Noleggi{
         return importoTotale;
     }
 
-    public void setDataDiFine(LocalDate dataDiFine) {
-        this.dataDiFine = dataDiFine;
+    public void setDataFine(LocalDate dataFine) {
+        this.dataFine = dataFine;
     }
 
     public void setVeicolo(Veicoli veicolo) {
@@ -57,14 +55,10 @@ public class Noleggi{
         this.cliente = cliente;
     }
 
-    public void setImportoTotale(int importoTotale) {
-        this.importoTotale = importoTotale;
-    }
-
     @Override
     public String toString() {
-        return "DATA INIZIO NOLEGGIO: " + dataDiInizio +  "\n" +
-                "DATA FINE NOLEGGIO: " + dataDiFine +  "\n" +
+        return "DATA INIZIO NOLEGGIO: " + dataInizio +  "\n" +
+                "DATA FINE NOLEGGIO: " + dataFine +  "\n" +
                 "TOTALE NOLEGGIO: " + importoTotale +  "€";
     }
 }
