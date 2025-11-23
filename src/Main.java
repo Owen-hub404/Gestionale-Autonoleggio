@@ -305,4 +305,16 @@ public class Main {
             }
         }
     }
+
+    private static double leggiDouble(String messaggio) {
+        while (true) {
+            try {
+                System.out.print(messaggio);
+                return Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Inserisci un numero valido.");
+            }
+        }
+    }
+
 }
