@@ -391,4 +391,10 @@ public class Main {
 
         System.out.println("Noleggio registrato correttamente!");
     }
+
+    private static void listaVeicoli() {
+        System.out.println("*************** Lista Veicoli ***************");
+        if (veicolis.isEmpty()) System.out.println("Nessun veicolo registrato.");
+        else veicolis.forEach(System.out::println);
+    }
 }
