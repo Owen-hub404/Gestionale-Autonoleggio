@@ -317,4 +317,25 @@ public class Main {
         }
     }
 
+    private static void registraAutovettura() {
+        System.out.println("*************** Registrazione Autovettura ***************");
+
+        Autovetture a = new Autovetture();
+
+        System.out.print("Marca: ");
+        a.setMarca(scanner.nextLine());
+
+        System.out.print("Modello: ");
+        a.setModello(scanner.nextLine());
+
+        System.out.print("Numero di Targa: ");
+        a.setNumeroDiTarga(scanner.nextLine());
+
+        a.setTariffaGiornaliera(leggiDouble("Tariffa giornaliera: "));
+        a.setNumeroDiPorte((byte) leggiIntero("Numero di porte: "));
+        a.setNumeroDiPosti((byte) leggiIntero("Numero di posti: "));
+
+        veicolis.add(a);
+        System.out.println("Autovettura registrata correttamente.");
+    }
 }
