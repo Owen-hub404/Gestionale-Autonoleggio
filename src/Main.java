@@ -397,4 +397,10 @@ public class Main {
         if (veicolis.isEmpty()) System.out.println("Nessun veicolo registrato.");
         else veicolis.forEach(System.out::println);
     }
+
+    private static void listaClienti() {
+        System.out.println("*************** Lista Clienti ***************");
+        if (clientis.isEmpty()) System.out.println("Nessun cliente registrato.");
+        else clientis.forEach(System.out::println);
+    }
 }
