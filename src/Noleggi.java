@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Noleggi{
     private LocalDate dataInizio;
@@ -17,6 +18,7 @@ public class Noleggi{
     }
 
     public Noleggi(Veicoli veicolo, Clienti cliente, LocalDate dataFine) {
+        this.dataInizio = LocalDate.now();
         this.veicolo = veicolo;
         this.cliente = cliente;
         this.dataFine = dataFine;
@@ -40,7 +42,9 @@ public class Noleggi{
     }
 
     public int getImportoTotale() {
-        return importoTotale;
+        long giorni = ChronoUnit.DAYS.between(dataInizio, dataFine);
+        if (giorni < 0) giorni = 0;
+        return (int)(giorni * veicolo.getTariffaGiornaliera());
     }
 
     public void setDataFine(LocalDate dataFine) {
